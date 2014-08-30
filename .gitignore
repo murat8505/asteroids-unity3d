@@ -1,0 +1,14 @@
+asteroids/Library
+asteroids/Temp
+
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
