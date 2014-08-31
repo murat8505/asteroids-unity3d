@@ -392,7 +392,7 @@ public class GameController : MonoBehaviour
             InvokeRepeating("GenerateUFO", ufo_delay_, ufo_delay_);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+		if (PlayerShip.FireButtonDown())
         {
             current_score_ = 0;
             current_score_text_.text = "0";
@@ -478,7 +478,7 @@ public class GameController : MonoBehaviour
         info_text_.enabled = true;
         info_text_.text = "GAME OVER";
         CancelInvoke("GenerateUFO");
-        if (Input.GetKeyDown(KeyCode.Space))
+		if (PlayerShip.FireButtonDown())
         {
             Clear();
             current_state_ = GAME_STATE.HIGH_SCORES;

@@ -140,7 +140,7 @@ public class HighScoresController : MonoBehaviour {
             }
             gui_letters_[letter_index_].guiText.text = letters_[letter_index_].ToString();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+		if (PlayerShip.FireButtonDown())
         {
             string initials = new string(letters_.ToArray());
             if (high_scores_.Count == max_num_scores_)
@@ -197,7 +197,7 @@ public class HighScoresController : MonoBehaviour {
             text += "\n";
         }
         info_text_.guiText.text = text;
-        if (Input.GetKeyDown(KeyCode.Space))
+		if (PlayerShip.FireButtonDown())
         {
             done_ = true;
         }

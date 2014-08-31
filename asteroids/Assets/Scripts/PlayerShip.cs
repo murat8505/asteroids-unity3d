@@ -45,6 +45,11 @@ public class PlayerShip : MonoBehaviour
         return on_hyperspace_;
     }
 
+	public static bool FireButtonDown ()
+	{
+		return (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.Space));
+	}
+
     // Update is called once per frame
     void Update()
     {
@@ -53,7 +58,7 @@ public class PlayerShip : MonoBehaviour
             if (!on_hyperspace_)
             {
                 transform.Rotate(Vector3.forward * ((-1) * Input.GetAxis("Horizontal") * rotate_speed_ * Time.deltaTime));
-                if (Input.GetKeyDown(KeyCode.Space))
+				if (PlayerShip.FireButtonDown())
                 {
                     Shoot();
                 }
